@@ -1,6 +1,7 @@
 package com.group_A.TRIPNEST.entity;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import java.util.*;
 
@@ -13,6 +14,7 @@ public class User {
     @Column(nullable = false) private String firstName;
     @Column(nullable = false) private String lastName;
     @Column(nullable = false, unique = true) private String email;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false) private String password;
     private String phoneNumber;
     private String preferredCurrency;
